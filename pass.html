@@ -47,27 +47,29 @@
 </script>
 
 <div class="container">
-    <img id="image1" src="Croc.jpg" class="img-fluid" alt="Crocs image" onclick="newImage()"
+    <img id="image1" src="Croc.jpg" class="img-fluid" alt="Images" onclick="newImage()"
         height="200" width="200">
 </div>
 
 <script>
-    var usingImage = 1
+    usingImage = 1;
 
     function newImage(){
         switch(usingImage){
             case 1:
-                document.getElementById("image1").src = "Crocs.jpg";
+                document.getElementById("image1").src = "Croc.jpg";
                 usingImage = usingImage + 1;
                 break;
             case 2:
-                document.getElementById("image1").scr = "Squirrel.jpg";
+                document.getElementById("image1").src = "Squirrel.jpg";
                 usingImage = usingImage + 1;
                 break;
             case 3:
-                document.getElementById("image1").scr = "HermitCrab.jpg";
+                document.getElementById("image1").src = "HermitCrab.jpg";
                 usingImage = 1;
                 break;
+            default:
+                usingImage = 1;
         }
     }
 </script>
