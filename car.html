@@ -38,18 +38,39 @@ function orderCar(){
     gps = document.getElementById("gps")
 
     if (electric.checked) {
-              electric1=true
+              electric1=true;
           }
            if (ac.checked){
-              ac1=true
+              ac1=true;
           }
           if (gps.checked){
-              gps1=true
+              gps1=true;
           }
           my_car={electric  : electric1, ac  : ac1, gps  : gps1}
       
           out=document.getElementById("result").innerHTML="Car Ordered is : "+JSON.stringify(my_car)
 }
+</script>
+
+<form>
+    <input type="text" id="property" name="car" value="color">
+    <label for="property">Enter a property</label>
+
+    <input type="text" id="value" name="car">
+    <label for="value">Enter a value</label>
+
+    <input type="button" onclick="updateCar()" value="Updatecar">
+</form>
+
+<p id="result2">This text will be replaced </p>
+
+<script>
+    function updateCar() {
+        prop=document.getElementById("property").value
+        val=document.getElementById("value").value
+        my_car[prop]=val
+        sol=document.getElementById("result2").innerHTML=JSON.stringify(my_car)
+    }
 </script>
 
 </body>
