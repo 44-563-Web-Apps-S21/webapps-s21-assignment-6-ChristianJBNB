@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Assignment 6
+    </title>
+<body>
+
+<h2>Hidden things by Christian Jackson</h2>
+
+<form>
+    <label for="form1_secretword">Enter the secret word </label>
+    <input type ="password" id="form1_secretword" value="secret">
+
+    <label for="form1_guessword">Enter a guess </label>
+    <input type ="text" id="form1_guessword" name="form1_guessword"> <br>
+
+    <input type="button" onclick=processGuess() value="Check the guess">
+</form>
+
+
+<p id="result">Results </p>
+
+<script> 
+    var correct = 0
+    var wrong = 0
+
+    function processGuess(){
+        secret_word = document.getElementById("form1_secretword").value
+        guess = document.getElementById("form1_guessword").value
+        confirmGuess = confirm("Is this correct? " + guess)
+        result = document.getElementById("result")
+        if(confirmGuess){
+            if(secret_word.localeCompare(guess) == 0){
+                alert("Congratulations")
+                correct = correct + 1
+                result.innerHTML = "Correct count: " + correct + "<br>" + "Wrong count:" + wrong
+            } else {
+                alert("Sorry")
+                wrong = wrong + 1
+                result.innerHTML = "Correct count: " + correct + "<br>" + "Wrong count:" + wrong
+            }
+        } else {
+            alert("Please guess again")
+        }            
+    }
+
+</script>
+
+<div class="container">
+    <img id="image1" src="Croc.jpg" class="img-fluid" alt="Crocs image" onclick="newImage()"
+        height="200" width="200">
+</div>
+
+<script>
+    var usingImage = 1
+
+    function newImage(){
+        switch(usingImage){
+            case 1:
+                document.getElementById("image1").src = "Crocs.jpg";
+                usingImage = usingImage + 1;
+                break;
+            case 2:
+                document.getElementById("image1").scr = "Squirrel.jpg";
+                usingImage = usingImage + 1;
+                break;
+            case 3:
+                document.getElementById("image1").scr = "HermitCrab.jpg";
+                usingImage = 1;
+                break;
+        }
+    }
+</script>
+
+</body>
+</html> 
