@@ -38,5 +38,55 @@ function powers(){
 }
 </script>
 
+<form>
+    
+    <input type="radio" id="form2_plus" name="cal" onclick="processRadio()" value="plus" >
+    <label for="form2_plus">+</label> <br>
+    
+    <input type ="radio" id="form2_minus" name="cal" onclick="processRadio()" value="minus">
+    <label for="form2_minus">-</label> <br>
+
+    <input type ="radio" id="form2_times" name="cal" onclick="processRadio()" value="times">
+    <label for="form2_times">*</label> <br>
+    
+    <input type ="radio" id="form2_divide" name="cal" onclick="processRadio()" value="divide">
+    <label for="form2_divide">/</label> <br>
+</form>
+
+<p id="result2">This text will be replaced </p>
+
+<script>
+
+function processRadio(){
+    base = document.getElementById("form1_base").value
+    exp = document.getElementById("form1_exp").value
+    plus = document.getElementById("form2_plus").checked
+    minus = document.getElementById("form2_minus").checked
+    times = document.getElementById("form2_times").checked
+    divide = document.getElementById("form2_divide").checked
+
+    if(plus){
+        result = (Number)(base) + (Number)(exp);
+        document.getElementById("result2").innerHTML = "Sum of " + base + " and " + exp + " = " + result;
+    }
+
+    if(minus){
+        result = (Number)(base) - (Number)(exp);
+        document.getElementById("result2").innerHTML = "Difference of " + base + " and " + exp + " = " + result;
+    }
+
+    if(times){
+        result = (Number)(base) * (Number)(exp);
+        document.getElementById("result2").innerHTML = "Multiplication of " + base + " and " + exp + " = " + result;
+    }
+
+    if(divide){
+        result = (Number)(base) / (Number)(exp);
+        document.getElementById("result2").innerHTML = "Division of " + base + " and " + exp + " = " + result;
+    }
+}
+
+</script>
+
 </body>
 </html> 
