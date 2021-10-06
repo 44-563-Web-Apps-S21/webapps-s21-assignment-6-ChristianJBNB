@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Car</title>
+</head>
+
+<body>
+
+<h2>Christian Jackson orders a car</h2>
+
+<form>
+    <input type="checkbox" id="electric" name="car" value="electric" >
+    <label for="electric">Electric</label> <br>
+
+    <input type="checkbox" id="ac" name="car" value="ac" >
+    <label for="ac">AC</label> <br>
+
+    <input type="checkbox" id="gps" name="car" value="gps" >
+    <label for="gps">GPS</label> <br>    
+
+    <input type="button" onclick="orderCar()" value="Ordercar">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+my_car = "";
+function orderCar(){
+    electric1 = false;
+    ac1 = false;
+    gps1 = false;
+
+    electric = document.getElementById("electric")
+    ac = document.getElementById("ac")
+    gps = document.getElementById("gps")
+
+    if (electric.checked) {
+              electric1=true
+          }
+           if (ac.checked){
+              ac1=true
+          }
+          if (gps.checked){
+              gps1=true
+          }
+          my_car={electric  : electric1, ac  : ac1, gps  : gps1}
+      
+          out=document.getElementById("result").innerHTML="Car Ordered is : "+JSON.stringify(my_car)
+}
+</script>
+
+</body>
+</html> 
